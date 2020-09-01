@@ -49,7 +49,7 @@ async function printEthereumChart() {
 					borderColor: "rgba(118,106,192,1)",
 					borderJoinStyle: "round",
 					borderCapStyle: "round",
-					borderWidth: 3,
+					borderWidth: 2,
 					pointRadius: 0,
 					pointHitRadius: 10,
 					lineTension: 0.2,

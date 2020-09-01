@@ -41,7 +41,7 @@ async function printCroChart() {
 					borderColor: "rgba(4,27,86,.75)",
 					borderJoinStyle: "round",
 					borderCapStyle: "round",
-					borderWidth: 3,
+					borderWidth: 2,
 					pointRadius: 0,
 					pointHitRadius: 10,
 					lineTension: 0.2,

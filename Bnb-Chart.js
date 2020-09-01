@@ -41,7 +41,7 @@ async function printBnbChart() {
 					borderColor: "rgba(243, 186, 47,.75)",
 					borderJoinStyle: "round",
 					borderCapStyle: "round",
-					borderWidth: 3,
+					borderWidth: 2,
 					pointRadius: 0,
 					pointHitRadius: 10,
 					lineTension: 0.2,
