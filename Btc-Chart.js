@@ -44,7 +44,7 @@ async function printBtcChart() {
 					borderWidth: 1,
 					pointRadius: 0,
 					pointHitRadius: 10,
-					lineTension: 0.9,
+					lineTension: 2,
 				},
 			],
 		},
