@@ -1,0 +1,9 @@
+.chart-class-custom {
+	display: block;
+}
+
+/* Charts */
+#btcChart {
+	grid-area: chart;
+	margin-top: auto;
+}
