@@ -1,0 +1,118 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+
+<!-- Table Pricing Engines -->
+<script src="https://rawcdn.githack.com/TXG-Ryan/CryptOptions-Engines/5ac5b963a14f33f4033bb69b46225c1e8ea0ca00/Table-Engine.js"></script>
+
+<!-- Chart Engines -->
+<script src="https://rawcdn.githack.com/TXG-Ryan/CryptOptions-Engines/45bcb1cce557032ad26d40e0aa9b26ca9bfe3d16/Btc-Chart.js"></script>
+
+<style>
+	/*width*/
+	::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	/*track*/
+	::-webkit-scrollbar-track {
+		background: rgb(255, 255, 255);
+		border-color: rgb(255, 255, 255);
+	}
+
+	/*thumb*/
+	::-webkit-scrollbar-thumb {
+		background: rgb(42, 90, 218);
+	}
+
+	<style > .table {
+		background-color: transparent;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: separate;
+		-webkit-border-vertical-spacing: 5px;
+	}
+
+	th,
+	td {
+		font-weight: unset;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+	.column1 {
+		width: 33%;
+		padding-left: 40px;
+	}
+
+	.column2 {
+		width: 13%;
+	}
+
+	.column3 {
+		width: 22%;
+	}
+
+	.column4 {
+		width: 19%;
+	}
+
+	.column5 {
+		width: 13%;
+	}
+
+	.table-head th {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
+		text-align: left;
+		background-color: #2a5ada;
+		color: white;
+		font-size: 12px;
+	}
+
+	.table-body td {
+		padding-top: 6px;
+		padding-bottom: 6px;
+		padding-left: 20px;
+		padding-right: 20px;
+
+		font-size: 11px;
+	}
+
+	.table-body tr {
+		border-radius: 6px;
+		background-color: #f4f6f7;
+		transition: 0.075s;
+	}
+
+	.table-body tr:hover {
+		border-radius: 6px;
+		background-color: #0082f3;
+		color: white;
+		font-weight: 600;
+	}
+
+	.chart-class-custom {
+		display: block;
+	}
+
+	/* Charts */
+	#btcChart,
+	#ethChart,
+	#croChart,
+	#bnbChart {
+		grid-area: chart;
+		margin-top: auto;
+	}
+</style>
+
+<script>
+	var HW_config = {
+		selector: ".notif",
+		account: "J39Dlx",
+	};
+</script>
+
+<script async src="https://cdn.headwayapp.co/widget.js"></script>
