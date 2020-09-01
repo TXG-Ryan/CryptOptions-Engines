@@ -13,6 +13,15 @@ const croData = async () => {
 	};
 };
 
+/// Error handling ///
+function checkStatus(response) {
+	if (response.ok) {
+		return Promise.resolve(response);
+	} else {
+		return Promise.reject(new Error(response.statusText));
+	}
+}
+
 /// Charts ///
 let createCroChart;
 
@@ -106,7 +115,7 @@ async function printCroChart() {
 // Update current price //
 async function updateCroPrice() {
 	let { times, prices } = await croData();
-	let currentPrice = prices[prices.length - 1].toFixed(2);
+	let currentPrice = prices[prices.length - 1].toFixed(3);
 
 	document.getElementById("croPrice").innerHTML = "$" + currentPrice;
 }

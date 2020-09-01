@@ -13,6 +13,15 @@ const bnbData = async () => {
 	};
 };
 
+/// Error handling ///
+function checkStatus(response) {
+	if (response.ok) {
+		return Promise.resolve(response);
+	} else {
+		return Promise.reject(new Error(response.statusText));
+	}
+}
+
 /// Charts ///
 let createBnbChart;
 
