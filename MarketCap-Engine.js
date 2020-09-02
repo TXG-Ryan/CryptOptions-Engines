@@ -296,10 +296,12 @@ function loadExVolPairsUSD() {
 	request.onload = function () {
 		var json = JSON.parse(this.responseText);
 		var json_results = json.Data;
-		//function comparator( a, b ) {
-		//    return Number(b.DISPLAY.USD.VOLUME24HOURTO) - Number(a.DISPLAY.USD.VOLUME24HOURTO);
-		//}
-		//json_results.sort( comparator );
+
+		function comparator(a, b) {
+			return Number(b.volume24h) - Number(a.volume24h);
+		}
+		json_results.sort(comparator);
+
 		var html_string = "<table>";
 		for (var i = 0; i < json_results.length; i++)
 			html_string +=
@@ -332,10 +334,12 @@ function loadExVolPairsGBP() {
 	request.onload = function () {
 		var json = JSON.parse(this.responseText);
 		var json_results = json.Data;
-		//function comparator( a, b ) {
-		//    return Number(b.DISPLAY.USD.VOLUME24HOURTO) - Number(a.DISPLAY.USD.VOLUME24HOURTO);
-		//}
-		//json_results.sort( comparator );
+
+		function comparator(a, b) {
+			return Number(b.volume24h) - Number(a.volume24h);
+		}
+		json_results.sort(comparator);
+
 		var html_string = "<table>";
 		for (var i = 0; i < json_results.length; i++)
 			html_string +=
@@ -368,10 +372,12 @@ function loadExVolPairsEUR() {
 	request.onload = function () {
 		var json = JSON.parse(this.responseText);
 		var json_results = json.Data;
-		//function comparator( a, b ) {
-		//    return Number(b.DISPLAY.USD.VOLUME24HOURTO) - Number(a.DISPLAY.USD.VOLUME24HOURTO);
-		//}
-		//json_results.sort( comparator );
+
+		function comparator(a, b) {
+			return Number(b.volume24h) - Number(a.volume24h);
+		}
+		json_results.sort(comparator);
+
 		var html_string = "<table>";
 		for (var i = 0; i < json_results.length; i++)
 			html_string +=
@@ -404,10 +410,12 @@ function loadExVolPairsETH() {
 	request.onload = function () {
 		var json = JSON.parse(this.responseText);
 		var json_results = json.Data;
-		//function comparator( a, b ) {
-		//    return Number(b.DISPLAY.USD.VOLUME24HOURTO) - Number(a.DISPLAY.USD.VOLUME24HOURTO);
-		//}
-		//json_results.sort( comparator );
+
+		function comparator(a, b) {
+			return Number(b.volume24h) - Number(a.volume24h);
+		}
+		json_results.sort(comparator);
+
 		var html_string = "<table>";
 		for (var i = 0; i < json_results.length; i++)
 			html_string +=
@@ -440,10 +448,12 @@ function loadExVolPairsUSDT() {
 	request.onload = function () {
 		var json = JSON.parse(this.responseText);
 		var json_results = json.Data;
-		//function comparator( a, b ) {
-		//    return Number(b.DISPLAY.USD.VOLUME24HOURTO) - Number(a.DISPLAY.USD.VOLUME24HOURTO);
-		//}
-		//json_results.sort( comparator );
+
+		function comparator(a, b) {
+			return Number(b.volume24h) - Number(a.volume24h);
+		}
+		json_results.sort(comparator);
+
 		var html_string = "<table>";
 		for (var i = 0; i < json_results.length; i++)
 			html_string +=
