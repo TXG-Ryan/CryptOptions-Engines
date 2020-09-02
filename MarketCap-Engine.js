@@ -324,6 +324,78 @@ function loadExVolPairsUSD() {
 	request.send();
 }
 
+function loadExVolPairsGBP() {
+	var url =
+		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=BTC&tsym=GBP";
+	var request = new XMLHttpRequest();
+	request.open("GET", url, true);
+	request.onload = function () {
+		var json = JSON.parse(this.responseText);
+		var json_results = json.Data;
+		//function comparator( a, b ) {
+		//    return Number(b.DISPLAY.USD.VOLUME24HOURTO) - Number(a.DISPLAY.USD.VOLUME24HOURTO);
+		//}
+		//json_results.sort( comparator );
+		var html_string = "<table>";
+		for (var i = 0; i < json_results.length; i++)
+			html_string +=
+				"<tr><td>" +
+				json_results[i].exchange +
+				"</td><td>" +
+				json_results[i].fromSymbol +
+				"</td><td>" +
+				json_results[i].toSymbol +
+				"</td><td>" +
+				json_results[i].price +
+				"</td><td>" +
+				json_results[i].volume24h +
+				"</td><td>" +
+				json_results[i].volume24hTo +
+				"</td><td>" +
+				json_results[i].exchangeGrade +
+				"</td></tr>";
+		html_string += "</table>";
+		document.getElementById("resultsExVolPairsGBP").innerHTML = html_string;
+	};
+	request.send();
+}
+
+function loadExVolPairsEUR() {
+	var url =
+		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=BTC&tsym=EUR";
+	var request = new XMLHttpRequest();
+	request.open("GET", url, true);
+	request.onload = function () {
+		var json = JSON.parse(this.responseText);
+		var json_results = json.Data;
+		//function comparator( a, b ) {
+		//    return Number(b.DISPLAY.USD.VOLUME24HOURTO) - Number(a.DISPLAY.USD.VOLUME24HOURTO);
+		//}
+		//json_results.sort( comparator );
+		var html_string = "<table>";
+		for (var i = 0; i < json_results.length; i++)
+			html_string +=
+				"<tr><td>" +
+				json_results[i].exchange +
+				"</td><td>" +
+				json_results[i].fromSymbol +
+				"</td><td>" +
+				json_results[i].toSymbol +
+				"</td><td>" +
+				json_results[i].price +
+				"</td><td>" +
+				json_results[i].volume24h +
+				"</td><td>" +
+				json_results[i].volume24hTo +
+				"</td><td>" +
+				json_results[i].exchangeGrade +
+				"</td></tr>";
+		html_string += "</table>";
+		document.getElementById("resultsExVolPairsEUR").innerHTML = html_string;
+	};
+	request.send();
+}
+
 function onLoad() {
 	loadGainers();
 	loadLosers();
@@ -336,6 +408,11 @@ function onLoad() {
 	loadMarketcapUSDT();
 
 	loadExVolPairsUSD();
+	loadExVolPairsGBP();
+	loadExVolPairsEUR();
+	loadExVolPairsBTC();
+	loadExVolPairsETH();
+	loadExVolPairsUSDT();
 
 	//setInterval(onLoad, 120000);
 }
