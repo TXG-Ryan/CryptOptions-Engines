@@ -600,44 +600,6 @@ function loadExVolPairsETHEUR() {
 	request.send();
 }
 
-function loadExVolPairsETHBTC() {
-	var url =
-		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=ETH&tsym=BTC";
-	var request = new XMLHttpRequest();
-	request.open("GET", url, true);
-	request.onload = function () {
-		var json = JSON.parse(this.responseText);
-		var json_results = json.Data;
-
-		function comparator(a, b) {
-			return Number(b.volume24h) - Number(a.volume24h);
-		}
-		json_results.sort(comparator);
-
-		var html_string = "<table>";
-		for (var i = 0; i < json_results.length; i++)
-			html_string +=
-				"<tr><td>" +
-				json_results[i].exchange +
-				"</td><td>" +
-				json_results[i].fromSymbol +
-				"</td><td>" +
-				json_results[i].toSymbol +
-				"</td><td>" +
-				json_results[i].price +
-				"</td><td>" +
-				json_results[i].volume24h +
-				"</td><td>" +
-				json_results[i].volume24hTo +
-				"</td><td>" +
-				json_results[i].exchangeGrade +
-				"</td></tr>";
-		html_string += "</table>";
-		document.getElementById("resultsExVolPairsETHBTC").innerHTML = html_string;
-	};
-	request.send();
-}
-
 function loadExVolPairsETHUSDT() {
 	var url =
 		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=ETH&tsym=USDT";
@@ -700,7 +662,6 @@ function onLoad() {
 	loadExVolPairsETHUSD();
 	loadExVolPairsETHGBP();
 	loadExVolPairsETHEUR();
-	loadExVolPairsETHBTC();
 	loadExVolPairsETHUSDT();
 
 	//setInterval(onLoad, 120000);
