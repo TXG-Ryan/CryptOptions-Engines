@@ -304,19 +304,19 @@ function loadExVolPairsUSD() {
 		for (var i = 0; i < json_results.length; i++)
 			html_string +=
 				"<tr><td>" +
-				json_results[i].DATA.exchange +
+				json_results[i].exchange +
 				"</td><td>" +
-				json_results[i].DATA.fromSymbol +
+				json_results[i].fromSymbol +
 				"</td><td>" +
-				json_results[i].DATA.toSymbol +
+				json_results[i].toSymbol +
 				"</td><td>" +
-				json_results[i].DATA.price +
+				json_results[i].price +
 				"</td><td>" +
-				json_results[i].DATA.volume24h +
+				json_results[i].volume24h +
 				"</td><td>" +
-				json_results[i].DATA.volume24hTo +
+				json_results[i].volume24hTo +
 				"</td><td>" +
-				json_results[i].DATA.exchangeGrade +
+				json_results[i].exchangeGrade +
 				"</td></tr>";
 		html_string += "</table>";
 		document.getElementById("resultsExVolPairsUSD").innerHTML = html_string;
