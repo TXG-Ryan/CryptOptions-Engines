@@ -484,6 +484,198 @@ function loadExVolPairsUSDT() {
 	request.send();
 }
 
+// Highest Rated Exchanges for Etheruem Trading //
+
+function loadExVolPairsETHUSD() {
+	var url =
+		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=ETH&tsym=USD";
+	var request = new XMLHttpRequest();
+	request.open("GET", url, true);
+	request.onload = function () {
+		var json = JSON.parse(this.responseText);
+		var json_results = json.Data;
+
+		function comparator(a, b) {
+			return Number(b.volume24h) - Number(a.volume24h);
+		}
+		json_results.sort(comparator);
+
+		var html_string = "<table>";
+		for (var i = 0; i < json_results.length; i++)
+			html_string +=
+				"<tr><td>" +
+				json_results[i].exchange +
+				"</td><td>" +
+				json_results[i].fromSymbol +
+				"</td><td>" +
+				json_results[i].toSymbol +
+				"</td><td>" +
+				json_results[i].price +
+				"</td><td>" +
+				json_results[i].volume24h +
+				"</td><td>" +
+				json_results[i].volume24hTo +
+				"</td><td>" +
+				json_results[i].exchangeGrade +
+				"</td></tr>";
+		html_string += "</table>";
+		document.getElementById("resultsExVolPairsETHUSD").innerHTML = html_string;
+	};
+	request.send();
+}
+
+function loadExVolPairsETHGBP() {
+	var url =
+		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=ETH&tsym=GBP";
+	var request = new XMLHttpRequest();
+	request.open("GET", url, true);
+	request.onload = function () {
+		var json = JSON.parse(this.responseText);
+		var json_results = json.Data;
+
+		function comparator(a, b) {
+			return Number(b.volume24h) - Number(a.volume24h);
+		}
+		json_results.sort(comparator);
+
+		var html_string = "<table>";
+		for (var i = 0; i < json_results.length; i++)
+			html_string +=
+				"<tr><td>" +
+				json_results[i].exchange +
+				"</td><td>" +
+				json_results[i].fromSymbol +
+				"</td><td>" +
+				json_results[i].toSymbol +
+				"</td><td>" +
+				json_results[i].price +
+				"</td><td>" +
+				json_results[i].volume24h +
+				"</td><td>" +
+				json_results[i].volume24hTo +
+				"</td><td>" +
+				json_results[i].exchangeGrade +
+				"</td></tr>";
+		html_string += "</table>";
+		document.getElementById("resultsExVolPairsETHGBP").innerHTML = html_string;
+	};
+	request.send();
+}
+
+function loadExVolPairsETHEUR() {
+	var url =
+		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=ETH&tsym=EUR";
+	var request = new XMLHttpRequest();
+	request.open("GET", url, true);
+	request.onload = function () {
+		var json = JSON.parse(this.responseText);
+		var json_results = json.Data;
+
+		function comparator(a, b) {
+			return Number(b.volume24h) - Number(a.volume24h);
+		}
+		json_results.sort(comparator);
+
+		var html_string = "<table>";
+		for (var i = 0; i < json_results.length; i++)
+			html_string +=
+				"<tr><td>" +
+				json_results[i].exchange +
+				"</td><td>" +
+				json_results[i].fromSymbol +
+				"</td><td>" +
+				json_results[i].toSymbol +
+				"</td><td>" +
+				json_results[i].price +
+				"</td><td>" +
+				json_results[i].volume24h +
+				"</td><td>" +
+				json_results[i].volume24hTo +
+				"</td><td>" +
+				json_results[i].exchangeGrade +
+				"</td></tr>";
+		html_string += "</table>";
+		document.getElementById("resultsExVolPairsETHEUR").innerHTML = html_string;
+	};
+	request.send();
+}
+
+function loadExVolPairsETHETH() {
+	var url =
+		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=ETH&tsym=ETH";
+	var request = new XMLHttpRequest();
+	request.open("GET", url, true);
+	request.onload = function () {
+		var json = JSON.parse(this.responseText);
+		var json_results = json.Data;
+
+		function comparator(a, b) {
+			return Number(b.volume24h) - Number(a.volume24h);
+		}
+		json_results.sort(comparator);
+
+		var html_string = "<table>";
+		for (var i = 0; i < json_results.length; i++)
+			html_string +=
+				"<tr><td>" +
+				json_results[i].exchange +
+				"</td><td>" +
+				json_results[i].fromSymbol +
+				"</td><td>" +
+				json_results[i].toSymbol +
+				"</td><td>" +
+				json_results[i].price +
+				"</td><td>" +
+				json_results[i].volume24h +
+				"</td><td>" +
+				json_results[i].volume24hTo +
+				"</td><td>" +
+				json_results[i].exchangeGrade +
+				"</td></tr>";
+		html_string += "</table>";
+		document.getElementById("resultsExVolPairsETHETH").innerHTML = html_string;
+	};
+	request.send();
+}
+
+function loadExVolPairsETHUSDT() {
+	var url =
+		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=ETH&tsym=USDT";
+	var request = new XMLHttpRequest();
+	request.open("GET", url, true);
+	request.onload = function () {
+		var json = JSON.parse(this.responseText);
+		var json_results = json.Data;
+
+		function comparator(a, b) {
+			return Number(b.volume24h) - Number(a.volume24h);
+		}
+		json_results.sort(comparator);
+
+		var html_string = "<table>";
+		for (var i = 0; i < json_results.length; i++)
+			html_string +=
+				"<tr><td>" +
+				json_results[i].exchange +
+				"</td><td>" +
+				json_results[i].fromSymbol +
+				"</td><td>" +
+				json_results[i].toSymbol +
+				"</td><td>" +
+				json_results[i].price +
+				"</td><td>" +
+				json_results[i].volume24h +
+				"</td><td>" +
+				json_results[i].volume24hTo +
+				"</td><td>" +
+				json_results[i].exchangeGrade +
+				"</td></tr>";
+		html_string += "</table>";
+		document.getElementById("resultsExVolPairsETHUSDT").innerHTML = html_string;
+	};
+	request.send();
+}
+
 function onLoad() {
 	// Top 20
 	loadGainers();
@@ -503,6 +695,13 @@ function onLoad() {
 	loadExVolPairsEUR();
 	loadExVolPairsETH();
 	loadExVolPairsUSDT();
+
+	// Exchange Volume Pairs -- Highest Rated Exchanges for Ethereum Trading
+	loadExVolPairsETHUSD();
+	loadExVolPairsETHGBP();
+	loadExVolPairsETHEUR();
+	loadExVolPairsETHETH();
+	loadExVolPairsETHUSDT();
 
 	//setInterval(onLoad, 120000);
 }
