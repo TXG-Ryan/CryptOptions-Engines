@@ -396,45 +396,9 @@ function loadExVolPairsEUR() {
 	request.send();
 }
 
-function loadExVolPairsBTC() {
-	var url =
-		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=BTC&tsym=BTC";
-	var request = new XMLHttpRequest();
-	request.open("GET", url, true);
-	request.onload = function () {
-		var json = JSON.parse(this.responseText);
-		var json_results = json.Data;
-		//function comparator( a, b ) {
-		//    return Number(b.DISPLAY.USD.VOLUME24HOURTO) - Number(a.DISPLAY.USD.VOLUME24HOURTO);
-		//}
-		//json_results.sort( comparator );
-		var html_string = "<table>";
-		for (var i = 0; i < json_results.length; i++)
-			html_string +=
-				"<tr><td>" +
-				json_results[i].exchange +
-				"</td><td>" +
-				json_results[i].fromSymbol +
-				"</td><td>" +
-				json_results[i].toSymbol +
-				"</td><td>" +
-				json_results[i].price +
-				"</td><td>" +
-				json_results[i].volume24h +
-				"</td><td>" +
-				json_results[i].volume24hTo +
-				"</td><td>" +
-				json_results[i].exchangeGrade +
-				"</td></tr>";
-		html_string += "</table>";
-		document.getElementById("resultsExVolPairsBTC").innerHTML = html_string;
-	};
-	request.send();
-}
-
 function loadExVolPairsETH() {
 	var url =
-		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=BTC&tsym=BTC";
+		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=BTC&tsym=ETH";
 	var request = new XMLHttpRequest();
 	request.open("GET", url, true);
 	request.onload = function () {
@@ -470,7 +434,7 @@ function loadExVolPairsETH() {
 
 function loadExVolPairsUSDT() {
 	var url =
-		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=BTC&tsym=BTC";
+		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=BTC&tsym=USDT";
 	var request = new XMLHttpRequest();
 	request.open("GET", url, true);
 	request.onload = function () {
@@ -518,7 +482,6 @@ function onLoad() {
 	loadExVolPairsUSD();
 	loadExVolPairsGBP();
 	loadExVolPairsEUR();
-	loadExVolPairsBTC();
 	loadExVolPairsETH();
 	loadExVolPairsUSDT();
 
