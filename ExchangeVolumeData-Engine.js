@@ -1,68 +1,6 @@
-function loadGainers() {
+function loadExVolPairsUSD() {
 	var url =
-		"https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD";
-	var request = new XMLHttpRequest();
-	request.open("GET", url, true);
-	request.onload = function () {
-		var json = JSON.parse(this.responseText);
-		var json_results = json.Data;
-		function comparator(a, b) {
-			return (
-				Number(b.DISPLAY.USD.CHANGEPCT24HOUR) -
-				Number(a.DISPLAY.USD.CHANGEPCT24HOUR)
-			);
-		}
-		json_results.sort(comparator);
-		var html_string = "<table>";
-		for (var i = 0; i < json_results.length; i++)
-			html_string +=
-				"<tr><td>" +
-				json_results[i].CoinInfo.Name +
-				"</td><td>" +
-				json_results[i].DISPLAY.USD.PRICE +
-				"</td><td>" +
-				json_results[i].DISPLAY.USD.CHANGEPCT24HOUR +
-				"</td></tr>";
-		html_string += "</table>";
-		document.getElementById("resultsGainers").innerHTML = html_string;
-	};
-	request.send();
-}
-
-function loadLosers() {
-	var url =
-		"https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD";
-	var request = new XMLHttpRequest();
-	request.open("GET", url, true);
-	request.onload = function () {
-		var json = JSON.parse(this.responseText);
-		var json_results = json.Data;
-		function comparator(a, b) {
-			return (
-				Number(a.DISPLAY.USD.CHANGEPCT24HOUR) -
-				Number(b.DISPLAY.USD.CHANGEPCT24HOUR)
-			);
-		}
-		json_results.sort(comparator);
-		var html_string = "<table>";
-		for (var i = 0; i < json_results.length; i++)
-			html_string +=
-				"<tr><td>" +
-				json_results[i].CoinInfo.Name +
-				"</td><td>" +
-				json_results[i].DISPLAY.USD.PRICE +
-				"</td><td>" +
-				json_results[i].DISPLAY.USD.CHANGEPCT24HOUR +
-				"</td></tr>";
-		html_string += "</table>";
-		document.getElementById("results-losers").innerHTML = html_string;
-	};
-	request.send();
-}
-
-function loadMarketcapUSD() {
-	var url =
-		"https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USD";
+		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=BTC&tsym=USD";
 	var request = new XMLHttpRequest();
 	request.open("GET", url, true);
 	request.onload = function () {
@@ -76,29 +14,27 @@ function loadMarketcapUSD() {
 		for (var i = 0; i < json_results.length; i++)
 			html_string +=
 				"<tr><td>" +
-				json_results[i].CoinInfo.Name +
+				json_results[i].Data.exchange +
 				"</td><td>" +
-				json_results[i].CoinInfo.FullName +
+				json_results[i].Data.fromSymbol +
 				"</td><td>" +
-				json_results[i].DISPLAY.USD.PRICE +
+				json_results[i].Data.toSymbol +
 				"</td><td>" +
-				json_results[i].DISPLAY.USD.CHANGEPCT24HOUR +
+				json_results[i].Data.price +
 				"</td><td>" +
-				json_results[i].DISPLAY.USD.LOW24HOUR +
+				json_results[i].Data.volume24h +
 				"</td><td>" +
-				json_results[i].DISPLAY.USD.HIGH24HOUR +
+				json_results[i].Data.volume24hTo +
 				"</td><td>" +
-				json_results[i].DISPLAY.USD.VOLUME24HOURTO +
-				"</td><td>" +
-				json_results[i].DISPLAY.USD.MKTCAP +
+				json_results[i].Data.exchangeGrade +
 				"</td></tr>";
 		html_string += "</table>";
-		document.getElementById("resultsMarketcapUSD").innerHTML = html_string;
+		document.getElementById("resultsExVolPairsUSD").innerHTML = html_string;
 	};
 	request.send();
 }
 
-function loadMarketcapGBP() {
+function loadExVolPairsGBP() {
 	var url =
 		"https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=GBP";
 	var request = new XMLHttpRequest();
@@ -131,12 +67,12 @@ function loadMarketcapGBP() {
 				json_results[i].DISPLAY.GBP.MKTCAP +
 				"</td></tr>";
 		html_string += "</table>";
-		document.getElementById("resultsMarketcapGBP").innerHTML = html_string;
+		document.getElementById("resultsExVolPairsGBP").innerHTML = html_string;
 	};
 	request.send();
 }
 
-function loadMarketcapEUR() {
+function loadExVolPairsEUR() {
 	var url =
 		"https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=EUR";
 	var request = new XMLHttpRequest();
@@ -169,12 +105,12 @@ function loadMarketcapEUR() {
 				json_results[i].DISPLAY.EUR.MKTCAP +
 				"</td></tr>";
 		html_string += "</table>";
-		document.getElementById("resultsMarketcapEUR").innerHTML = html_string;
+		document.getElementById("resultsExVolPairsEUR").innerHTML = html_string;
 	};
 	request.send();
 }
 
-function loadMarketcapBTC() {
+function loadExVolPairsBTC() {
 	var url =
 		"https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=BTC";
 	var request = new XMLHttpRequest();
@@ -207,12 +143,12 @@ function loadMarketcapBTC() {
 				json_results[i].DISPLAY.BTC.MKTCAP +
 				"</td></tr>";
 		html_string += "</table>";
-		document.getElementById("resultsMarketcapBTC").innerHTML = html_string;
+		document.getElementById("resultsExVolPairsBTC").innerHTML = html_string;
 	};
 	request.send();
 }
 
-function loadMarketcapETH() {
+function loadExVolPairsETH() {
 	var url =
 		"https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=ETH";
 	var request = new XMLHttpRequest();
@@ -245,12 +181,12 @@ function loadMarketcapETH() {
 				json_results[i].DISPLAY.ETH.MKTCAP +
 				"</td></tr>";
 		html_string += "</table>";
-		document.getElementById("resultsMarketcapETH").innerHTML = html_string;
+		document.getElementById("resultsExVolPairsETH").innerHTML = html_string;
 	};
 	request.send();
 }
 
-function loadMarketcapUSDT() {
+function loadExVolPairsUSDT() {
 	var url =
 		"https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USDT";
 	var request = new XMLHttpRequest();
@@ -283,21 +219,18 @@ function loadMarketcapUSDT() {
 				json_results[i].DISPLAY.USDT.MKTCAP +
 				"</td></tr>";
 		html_string += "</table>";
-		document.getElementById("resultsMarketcapUSDT").innerHTML = html_string;
+		document.getElementById("resultsExVolPairsUSDT").innerHTML = html_string;
 	};
 	request.send();
 }
 
 function onLoad() {
-	loadGainers();
-	loadLosers();
-
-	loadMarketcapUSD();
-	loadMarketcapGBP();
-	loadMarketcapEUR();
-	loadMarketcapBTC();
-	loadMarketcapETH();
-	loadMarketcapUSDT();
+	loadExVolPairsUSD();
+	loadExVolPairsGBP();
+	loadExVolPairsEUR();
+	loadExVolPairsBTC();
+	loadExVolPairsETH();
+	loadExVolPairsUSDT();
 
 	//setInterval(onLoad, 120000);
 }
