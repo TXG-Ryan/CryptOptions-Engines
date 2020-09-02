@@ -1,3 +1,5 @@
+// Top 20 Gainers and Losers //
+
 function loadGainers() {
 	var url =
 		"https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD";
@@ -59,6 +61,8 @@ function loadLosers() {
 	};
 	request.send();
 }
+
+// Market Cap Data - Tables //
 
 function loadMarketcapUSD() {
 	var url =
@@ -288,6 +292,8 @@ function loadMarketcapUSDT() {
 	request.send();
 }
 
+// Highest Rated Exchanges for Bitcoin Trading //
+
 function loadExVolPairsUSD() {
 	var url =
 		"https://min-api.cryptocompare.com/data/top/exchanges?limit=1000&fsym=BTC&tsym=USD";
@@ -479,9 +485,11 @@ function loadExVolPairsUSDT() {
 }
 
 function onLoad() {
+	// Top 20
 	loadGainers();
 	loadLosers();
 
+	// Market Cap Tables
 	loadMarketcapUSD();
 	loadMarketcapGBP();
 	loadMarketcapEUR();
@@ -489,6 +497,7 @@ function onLoad() {
 	loadMarketcapETH();
 	loadMarketcapUSDT();
 
+	// Exchange Volume Pairs -- Highest Rated Exchanges for Bitcoin Trading
 	loadExVolPairsUSD();
 	loadExVolPairsGBP();
 	loadExVolPairsEUR();
