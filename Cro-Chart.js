@@ -40,6 +40,7 @@ async function printCroChart() {
 
 	createCroChart = new Chart(croChart, {
 		type: "line",
+		lineColor: "white",
 		data: {
 			labels: times,
 			datasets: [
