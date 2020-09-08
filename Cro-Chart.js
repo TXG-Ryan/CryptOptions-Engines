@@ -52,7 +52,7 @@ async function printCroChart() {
 					borderCapStyle: "round",
 					borderWidth: 2,
 					pointRadius: 0,
-					pointHitRadius: 10,
+					pointHitRadius: 100,
 					lineTension: 0.2,
 				},
 			],
