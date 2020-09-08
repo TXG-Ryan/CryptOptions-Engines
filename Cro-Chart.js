@@ -32,8 +32,8 @@ async function printCroChart() {
 
 	let gradient = croChart.createLinearGradient(0, 0, 0, 400);
 
-	gradient.addColorStop(0, "rgba(42,90,218,.5)");
-	gradient.addColorStop(0.75, "rgba(255,193,119,0)");
+	gradient.addColorStop(0, "rgba(46,74,110,1.0)");
+	gradient.addColorStop(0.75, "rgba(46,74,110,1.0)");
 
 	Chart.defaults.global.defaultFontFamily = "Red Hat Text";
 	Chart.defaults.global.defaultFontSize = 12;
