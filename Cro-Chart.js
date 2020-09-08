@@ -106,7 +106,7 @@ async function printCroChart() {
 				xPadding: 10,
 				position: "nearest",
 				caretSize: 10,
-				backgroundColor: "rgba(255,255,255,.9)",
+				backgroundColor: "rgba(42,90,218,1.0)",
 				bodyFontSize: 15,
 				bodyFontColor: "#303030",
 			},
