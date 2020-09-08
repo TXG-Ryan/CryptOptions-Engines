@@ -59,6 +59,8 @@ async function printCroChart() {
 		},
 
 		options: {
+			responsive: true,
+			maintainAspectRatio: false,
 			title: {
 				display: false,
 				text: "Heckin Chart!",
@@ -70,7 +72,6 @@ async function printCroChart() {
 			},
 
 			layout: {
-				responsive: true,
 				padding: {
 					left: 0,
 					right: 0,
