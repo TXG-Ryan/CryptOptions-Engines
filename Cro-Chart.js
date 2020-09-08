@@ -47,7 +47,7 @@ async function printCroChart() {
 					label: "$",
 					data: prices,
 					backgroundColor: gradient,
-					borderColor: "rgba(4,27,86,.75)",
+					borderColor: "#2a5ada",
 					borderJoinStyle: "round",
 					borderCapStyle: "round",
 					borderWidth: 2,
