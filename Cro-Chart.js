@@ -40,7 +40,7 @@ async function printCroChart() {
 
 	createCroChart = new Chart(croChart, {
 		type: "line",
-		lineColor: "rgba(255,255,255,1.0)",
+		lineColor: "rgba(63,176,255,1.0)",
 		data: {
 			labels: times,
 			datasets: [
@@ -48,7 +48,7 @@ async function printCroChart() {
 					label: "$",
 					data: prices,
 					backgroundColor: gradient,
-					borderColor: "rgba(255,255,255,1.0)",
+					borderColor: "rgba(63,176,255,1.0)",
 					borderJoinStyle: "round",
 					borderCapStyle: "round",
 					borderWidth: 2,
