@@ -26,7 +26,7 @@ function checkStatus(response) {
 let createCroChart;
 
 async function printCroChart() {
-	let { times, prices } = await croData();
+	let {times, prices} = await croData();
 
 	let croChart = document.getElementById("croChart").getContext("2d");
 
@@ -70,6 +70,7 @@ async function printCroChart() {
 			},
 
 			layout: {
+				responsive: true,
 				padding: {
 					left: 0,
 					right: 0,
@@ -114,7 +115,7 @@ async function printCroChart() {
 
 // Update current price //
 async function updateCroPrice() {
-	let { times, prices } = await croData();
+	let {times, prices} = await croData();
 	let currentPrice = prices[prices.length - 1].toFixed(3);
 
 	document.getElementById("croPrice").innerHTML = "$" + currentPrice;
