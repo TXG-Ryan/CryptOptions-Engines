@@ -32,7 +32,7 @@ async function printCroChart() {
 
 	let gradient = croChart.createLinearGradient(0, 0, 0, 400);
 
-	gradient.addColorStop(0, "rgba(42,90,218,1.0)");
+	gradient.addColorStop(0, "rgba(42,90,218,.5)");
 	gradient.addColorStop(0.75, "rgba(255,193,119,0)");
 
 	Chart.defaults.global.defaultFontFamily = "Red Hat Text";
@@ -47,7 +47,7 @@ async function printCroChart() {
 					label: "$",
 					data: prices,
 					backgroundColor: gradient,
-					borderColor: "rgba(42,90,218,1.0)",
+					borderColor: "rgba(42,90,218,.5)",
 					borderJoinStyle: "round",
 					borderCapStyle: "round",
 					borderWidth: 2,
