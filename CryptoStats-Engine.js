@@ -11,12 +11,12 @@ async function getPrice( coin )
 
     var lc_coin = coin.toLowerCase();
 
-    if ( priceChangePercent > 0 )
-        document.getElementById( '24hr-' + lc_coin ).style.color = 'green';
+    // if ( priceChangePercent > 0 )
+    //    document.getElementById( '24hr-' + lc_coin ).style.color = 'green';
 
 
     //if ( priceChange > 0 )
-    document.getElementById( '24hrPriceChange-' + lc_coin ).style.color = 'green';
+    // document.getElementById( '24hrPriceChange-' + lc_coin ).style.color = 'green';
 
     // Coin Listing Panel
     document.getElementById( 'price-' + lc_coin ).textContent = numberWithCommas(Number(prevClosePrice).toFixed(DP));
