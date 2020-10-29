@@ -1,4 +1,4 @@
-var mcp = {"url":"http://localhost/widgets","ajax_url":"http://localhost/widgets/widgets/ajax","numformat":"EU","sidebar":true};
+var mcp = {"url":"https://txg-dev.network/massivephp/massivephp","ajax_url":"https://txg-dev.network/massivephp/massivephp/widgets/ajax","numformat":"US","sidebar":false};
 /*
 * JohnyDepp
 * https://github.com/muicss/johnnydepp
