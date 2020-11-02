@@ -71,40 +71,40 @@ function setSpot( asset, ccy )
         async  : true,
         context: document.body
 
-    }).done(function (jresponse) {
+    // }).done(function (jresponse) {
 
-        var response = JSON.parse( jresponse );
+    //     var response = JSON.parse( jresponse );
 
-        if( response.data != document.getElementById( asset + '-' + ccy ).value )
-        {
+    //     if( response.data != document.getElementById( asset + '-' + ccy ).value )
+    //     {
 
-            var elem   = document.getElementById( asset + '-' + ccy);
-            var nstyle = null;
-            var ostyle = elem.style;
-            if( response.data > elem.value )
-                nstyle = "color: green; font-weight: bold;";
-            else
-                nstyle = "color: red; font-weight: bold;";
-            elem.style = nstyle;
-            setTimeout( setStyle, stylechange_update_frequency, elem, ostyle );
+    //         var elem   = document.getElementById( asset + '-' + ccy);
+    //         var nstyle = null;
+    //         var ostyle = elem.style;
+    //         if( response.data > elem.value )
+    //             nstyle = "color: green; font-weight: bold;";
+    //         else
+    //             nstyle = "color: red; font-weight: bold;";
+    //         elem.style = nstyle;
+    //         setTimeout( setStyle, stylechange_update_frequency, elem, ostyle );
 
-            var astart     = '<a onclick="alert(\'Go to www.cryptoptions.ie to trade\')">';
-            var aend       = '</a>';
-            elem.value     = Number(response.data);
-            elem.innerHTML =  astart + numberWithCommas( formatNumber( Number(response.data), 2 ) ) + aend;
+    //         var astart     = '<a onclick="alert(\'Go to www.cryptoptions.ie to trade\')">';
+    //         var aend       = '</a>';
+    //         elem.value     = Number(response.data);
+    //         elem.innerHTML =  astart + numberWithCommas( formatNumber( Number(response.data), 2 ) ) + aend;
 
-            var gbpusd = document.getElementById( 'GBPUSD').value;
-            var eurusd = document.getElementById( 'EURUSD').value;
+    //         var gbpusd = document.getElementById( 'GBPUSD').value;
+    //         var eurusd = document.getElementById( 'EURUSD').value;
 
-            document.getElementById( asset + '-GBP' ).value     = Number(response.data)/gbpusd;
-            document.getElementById( asset + '-GBP' ).innerHTML = astart + numberWithCommas( formatNumber( Number(response.data)/gbpusd, 2 ) ) + aend;
+    //         document.getElementById( asset + '-GBP' ).value     = Number(response.data)/gbpusd;
+    //         document.getElementById( asset + '-GBP' ).innerHTML = astart + numberWithCommas( formatNumber( Number(response.data)/gbpusd, 2 ) ) + aend;
 
-            document.getElementById( asset + '-EUR' ).value     = Number(response.data)/eurusd;
-            document.getElementById( asset + '-EUR' ).innerHTML = astart + numberWithCommas( formatNumber( Number(response.data)/eurusd, 2 ) ) + aend;
+    //         document.getElementById( asset + '-EUR' ).value     = Number(response.data)/eurusd;
+    //         document.getElementById( asset + '-EUR' ).innerHTML = astart + numberWithCommas( formatNumber( Number(response.data)/eurusd, 2 ) ) + aend;
 
-        }
+    //     }
 
-    });
+    // });
 
     setTimeout( setSpot, spot_update_frequency, asset, ccy );
 
