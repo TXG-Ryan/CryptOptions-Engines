@@ -151,7 +151,7 @@ function initialize_options()
 
     }
 
-}
+},
 
 function setOptions( id, x, y )
 {
