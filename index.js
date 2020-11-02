@@ -1,4 +1,3 @@
-
 var options_update_frequency     = 5000;
 var spot_update_frequency        = 3000;
 var stylechange_update_frequency = 3000;
@@ -138,7 +137,6 @@ function initialize_options()
                 document.getElementById( response.data.asset + '_EXPIRY_' + (x+1).toString() ).innerHTML = response.data.expiries[x];
                 for( var y = 0; y < response.data.strikes.length; y++ )
                 {
-
                     document.getElementById( response.data.asset + '_STRIKE_' + (x + 1).toString() + '_' + (y + 1).toString() ).innerHTML = response.data.strikes[y];
                     setTimeout( setOptions, 1 , build_id( response.data.asset, response.data.expiries[x], response.data.strikes[y], 'C', 'USD', 'ask_price' ), x, y );
                     setTimeout( setOptions, 1 , build_id( response.data.asset, response.data.expiries[x], response.data.strikes[y], 'P', 'USD', 'ask_price' ), x, y );
@@ -300,4 +298,3 @@ function setStyle( elem, style )
     elem.style = style;
 
 }
-
