@@ -74,7 +74,7 @@ function setSpot( asset, ccy )
         async  : true,
         context: document.body
 
-    // }).done(function (jresponse) {
+     })//.done(function (jresponse) {
 
     //     var response = JSON.parse( jresponse );
 
