@@ -235,10 +235,10 @@ function setOptions( id, x, y )
 
 }
 
-function build_id( asset, expiry, strike, pc, pricing_ccy, code )
+function build_id( asset, strike, pc, pricing_ccy, code )
 {
 
-    return 'CO' + '|' + asset + '|' + expiry + '|' + strike + '|' + pc + '|' + pricing_ccy + '|' + code;
+    return 'CO' + '|' + asset + '|' + strike + '|' + pc + '|' + pricing_ccy + '|' + code;
 
 }
 
