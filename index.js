@@ -128,26 +128,26 @@ function initialize_options()
             async  : true,
             context: document.body
 
-        }).done(function (jresponse) {
+        // }).done(function (jresponse) {
 
-            var response = JSON.parse( jresponse );
-            for( var x = 0; x < response.data.expiries.length; x++ )
-            {
+        //     var response = JSON.parse( jresponse );
+        //     for( var x = 0; x < response.data.expiries.length; x++ )
+        //     {
 
-                document.getElementById( response.data.asset + '_EXPIRY_' + (x+1).toString() ).innerHTML = response.data.expiries[x];
-                for( var y = 0; y < response.data.strikes.length; y++ )
-                {
-                    document.getElementById( response.data.asset + '_STRIKE_' + (x + 1).toString() + '_' + (y + 1).toString() ).innerHTML = response.data.strikes[y];
-                    setTimeout( setOptions, 1 , build_id( response.data.asset, response.data.expiries[x], response.data.strikes[y], 'C', 'USD', 'ask_price' ), x, y );
-                    setTimeout( setOptions, 1 , build_id( response.data.asset, response.data.expiries[x], response.data.strikes[y], 'P', 'USD', 'ask_price' ), x, y );
-                    setTimeout( setOptions, 1 , build_id( response.data.asset, response.data.expiries[x], response.data.strikes[y], 'C', 'USD', 'delta' ), x, y );
-                    setTimeout( setOptions, 1 , build_id( response.data.asset, response.data.expiries[x], response.data.strikes[y], 'P', 'USD', 'delta' ), x, y );
+        //         document.getElementById( response.data.asset + '_EXPIRY_' + (x+1).toString() ).innerHTML = response.data.expiries[x];
+        //         for( var y = 0; y < response.data.strikes.length; y++ )
+        //         {
+        //             document.getElementById( response.data.asset + '_STRIKE_' + (x + 1).toString() + '_' + (y + 1).toString() ).innerHTML = response.data.strikes[y];
+        //             setTimeout( setOptions, 1 , build_id( response.data.asset, response.data.expiries[x], response.data.strikes[y], 'C', 'USD', 'ask_price' ), x, y );
+        //             setTimeout( setOptions, 1 , build_id( response.data.asset, response.data.expiries[x], response.data.strikes[y], 'P', 'USD', 'ask_price' ), x, y );
+        //             setTimeout( setOptions, 1 , build_id( response.data.asset, response.data.expiries[x], response.data.strikes[y], 'C', 'USD', 'delta' ), x, y );
+        //             setTimeout( setOptions, 1 , build_id( response.data.asset, response.data.expiries[x], response.data.strikes[y], 'P', 'USD', 'delta' ), x, y );
 
-                }
+        //         }
 
-            }
+        //     }
 
-        });
+        // });
 
     }
 
