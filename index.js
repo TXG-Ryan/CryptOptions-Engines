@@ -1,4 +1,4 @@
-// UPDATED 03/11/2020
+// UPDATED 03/11/2020 11:42 //
 
 var options_update_frequency     = 5000;
 var spot_update_frequency        = 3000;
