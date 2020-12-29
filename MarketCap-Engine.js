@@ -62,7 +62,7 @@ function loadLosers() {
 	request.send();
 }
 
-// Market Cap Data - Tables //
+// Market Cap Data - Tables /
 
 function loadMarketcapUSD() {
 	var url =
