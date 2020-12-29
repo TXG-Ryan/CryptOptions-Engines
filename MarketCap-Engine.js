@@ -92,8 +92,6 @@ function loadMarketcapUSD() {
 				"</td><td>" +
 				json_results[i].DISPLAY.USD.HIGH24HOUR +
 				"</td><td>" +
-				json_results[i].DISPLAY.USD.VOLUME24HOURTO +
-				"</td><td>" +
 				json_results[i].DISPLAY.USD.MKTCAP +
 				"</td></tr>";
 		html_string += "</table>";
