@@ -66,7 +66,7 @@ function loadLosers() {
 
 function loadMarketcapUSD() {
 	var url =
-		"https://min-api.cryptocompare.com/data/top/mktcapfull?limit=100&tsym=USD";
+		"https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD";
 	var request = new XMLHttpRequest();
 	request.open("GET", url, true);
 	request.onload = function () {
