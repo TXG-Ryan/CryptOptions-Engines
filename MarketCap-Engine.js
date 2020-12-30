@@ -79,9 +79,9 @@ function loadMarketcapUSD() {
 		var html_string = "<table>";
 		for (var i = 0; i < json_results.length; i++)
 			html_string +=
-				"<tr><td style="text-align:left;">" +
+				"<tr><td>" +
 				json_results[i].CoinInfo.Name +
-				"</td><td style="text-align:left;">" +
+				"</td><td>" +
 				json_results[i].CoinInfo.FullName +
 				"</td><td>" +
 				json_results[i].DISPLAY.USD.PRICE +
