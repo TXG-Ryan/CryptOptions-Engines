@@ -1,0 +1,7 @@
+{
+    "name": "DataX: Crypto Market Data",
+    "short_name": "DataX",
+    "lang": "en-GB",
+    "start_url": "https://www.cryptoptions.app/",
+    "display": "standalone"
+  }
